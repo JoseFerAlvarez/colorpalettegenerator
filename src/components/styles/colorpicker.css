@@ -1,0 +1,19 @@
+.colors{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 10%;
+    margin-top: 10%;
+}
+
+.circle{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    border-radius: 50%;
+}
+
+.color-picker{
+}
