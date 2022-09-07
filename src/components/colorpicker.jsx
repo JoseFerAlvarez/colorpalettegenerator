@@ -5,7 +5,7 @@ import ColorCircle from './colorCircle';
 
 
 const Colorpicker = () => {
-    const [background, setBackground] = useState("#000");
+    const [background, setBackground] = useState("fff");
 
 
     //BUG: Hay que clickar 2 veces para que cambie el color
@@ -36,7 +36,7 @@ const Colorpicker = () => {
                 </div>
 
             </div>
-            <CompactPicker color={background}
+            <CompactPicker className='color-picker' color={background}
                 onChangeComplete={handleChangeComplete}
             />
         </div>

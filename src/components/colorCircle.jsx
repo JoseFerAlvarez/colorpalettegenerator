@@ -1,24 +1,19 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import "./styles/colorCircle.css";
+import "./styles/colorcircle.css"
 
 const ColorCircle = (props) => {
 
-    const [backOff, setBackOff] = useState("#000");
+    const [backOff, setBackOff] = useState("#cccccc");
     const [backOn, setBackOn] = useState("green");
 
     const styleDef = {
-        "width": "100px",
-        "height": "100px",
         "background-color": backOff,
-        "border-radius": "50%"
     }
 
     const stylePick = {
-        "width": "120px",
-        "height": "120px",
         "background-color": backOn,
-        "border-radius": "50%"
+        "zoom": "1.3"
     }
 
     const [picked, setPicked] = useState(false);
@@ -43,8 +38,8 @@ const ColorCircle = (props) => {
     }, [props.background, picked, backOn, backOff]);
 
     return (
-        <div onClick={isPicked} style={style}>
-        </div >
+        <div className='circle' onClick={isPicked} style={style}>
+        </div>
     );
 };
 
