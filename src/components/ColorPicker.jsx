@@ -1,4 +1,4 @@
-import React, { useState, handleChangeComplete } from 'react';
+import React, { useState } from 'react';
 import { CompactPicker } from 'react-color';
 import "./styles/colorpicker.css"
 import ColorCircle from './ColorCircle';
