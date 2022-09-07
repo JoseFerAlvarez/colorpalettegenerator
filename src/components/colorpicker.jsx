@@ -5,27 +5,35 @@ import ColorCircle from './colorCircle';
 
 
 const Colorpicker = () => {
-    const [background, setBackground] = useState("#fff");
+    const [background, setBackground] = useState("#000");
 
+
+    //BUG: Hay que clickar 2 veces para que cambie el color
     handleChangeComplete = (color) => {
         setBackground(color.hex)
-        console.log(color.hex);
     }
 
-    const hola = () => {
-        console.log("hola");
-    }
+
+
 
     return (
         <div className='container'>
             <div className='colors'>
-                <div onClick={hola}>
+                <div>
                     <ColorCircle background={background} />
                 </div>
-                <ColorCircle />
-                <ColorCircle />
-                <ColorCircle />
-                <ColorCircle />
+                <div>
+                    <ColorCircle background={background} />
+                </div>
+                <div>
+                    <ColorCircle background={background} />
+                </div>
+                <div>
+                    <ColorCircle background={background} />
+                </div>
+                <div>
+                    <ColorCircle background={background} />
+                </div>
 
             </div>
             <CompactPicker color={background}

@@ -1,37 +1,49 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import "./styles/colorCircle.css";
 
-const def = {
-    "width": "100px",
-    "height": "100px",
-    "background-color": "black",
-    "border-radius": "50%"
-}
-
-
-
 const ColorCircle = (props) => {
 
-    const picked = {
-        "width": "120px",
-        "height": "120px",
-        "background-color": props.background,
+    const [backOff, setBackOff] = useState("#000");
+    const [backOn, setBackOn] = useState("green");
+
+    const styleDef = {
+        "width": "100px",
+        "height": "100px",
+        "background-color": backOff,
         "border-radius": "50%"
     }
 
-    const [style, setStyle] = useState(def);
+    const stylePick = {
+        "width": "120px",
+        "height": "120px",
+        "background-color": backOn,
+        "border-radius": "50%"
+    }
 
-    const changeStyle = () => {
-        if (style === def) {
-            setStyle(picked);
+    const [picked, setPicked] = useState(false);
+    const [style, setStyle] = useState(styleDef);
+
+    const isPicked = () => {
+        if (picked === false) {
+            setPicked(true)
+            setStyle(stylePick)
         } else {
-            setStyle(def);
+            setPicked(false)
+            setStyle(styleDef)
         }
     }
 
+    useEffect(() => {
+        if (picked === true) {
+            setBackOn(props.background)
+            setBackOff(props.background)
+            setStyle(stylePick)
+        }
+    }, [props.background, picked, backOn, backOff]);
+
     return (
-        <div onClick={changeStyle} style={style}>
+        <div onClick={isPicked} style={style}>
         </div >
     );
 };
@@ -39,8 +51,6 @@ const ColorCircle = (props) => {
 
 ColorCircle.propTypes = {
     background: PropTypes.string,
-    pick: PropTypes.bool
 };
-
 
 export default ColorCircle;
