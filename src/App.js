@@ -1,12 +1,12 @@
 import './App.css';
-import Colorpicker from './components/colorpicker';
-import Topbar from './components/topbar';
+import ColorPicker from './components/ColorPicker';
+import Topbar from './components/Topbar';
 
 function App() {
   return (
     <div className="App">
       <Topbar />
-      <Colorpicker />
+      <ColorPicker />
     </div>
   );
 }
