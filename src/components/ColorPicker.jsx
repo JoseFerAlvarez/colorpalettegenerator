@@ -8,7 +8,7 @@ const ColorPicker = () => {
     const [color, setColor] = useState("#fff");
 
     //Cambia el estado del color al cambiar de color en el picker
-    handleChangeComplete = (color) => {
+    const handleChangeComplete = (color) => {
         setColor(color.hex)
     }
 
