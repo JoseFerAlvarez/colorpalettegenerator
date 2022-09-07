@@ -1,7 +1,7 @@
 {
   "name": "colorpalettegenerator",
   "version": "0.1.0",
-  "homepage": "https://JoseFerAlvarez.github.io/unitconverter",
+  "homepage": "https://JoseFerAlvarez.github.io/colorpalettegenerator",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
